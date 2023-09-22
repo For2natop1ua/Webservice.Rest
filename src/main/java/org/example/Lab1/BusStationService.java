@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Lab1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,6 +39,7 @@ public class BusStationService {
         SpringApplication.run(BusStationService.class, args);
     }
 
+    // Для Google Chrome
     @GetMapping("/BusStation")
     public String getAllBuses() {
         StringBuilder result = new StringBuilder();
@@ -51,7 +52,6 @@ public class BusStationService {
         }
         return result.toString();
     }
-
     @GetMapping("/BusStation/{busNumber}")
     public ResponseEntity<?> getBusByNumber(@PathVariable String busNumber) {
         try {
@@ -70,7 +70,6 @@ public class BusStationService {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Некоректний формат");
         }
     }
-
     @PostMapping("/BusStation")
     public ResponseEntity<Void> addBus(@RequestBody Bus bus) {
         busList.add(bus);

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Lab1;
 
 public class Bus {
     private String busNumber;
